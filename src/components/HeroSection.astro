@@ -1,0 +1,54 @@
+---
+import { Rocket } from '@lucide/astro';
+
+
+const content = {
+  title: "Creatify365: Your Partner for Digital Growth",
+  subtitle: "Attract More Customers: Finally, a Digital Solution for Your Business That Just Works.",
+  tagline: "Websites. Google Visibility. We manage the tech. You focus on your passion and growth.",
+  ctaText: "Ignite Growth - Get Your Free Strategy",
+  ctaLink: "#contact", // Update this to your actual contact/booking page link
+  backgroundImageUrl: "/site/images/hero.png" // TODO: Replace with your actual image path e.g., /images/kampala-skyline.jpg
+}; 
+---
+
+<section
+  class="relative text-white min-h-[75vh] md:min-h-[80vh] flex flex-col justify-center items-center overflow-hidden"
+>
+  <!-- Background Image -->
+  <div
+    class="absolute inset-0 -z-20 bg-cover bg-center"
+    style={`background-image: url(${content.backgroundImageUrl});`}
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Background Gradient Overlay -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-indigo-800/90 via-blue-600/75 to-cyan-500/75 -z-10"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Content -->
+  <div class="container mx-auto px-6 py-16 md:py-24 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down [text-shadow:_0_2px_4px_rgb(0_0_0_/_50%)]">
+        {content.title}
+      </h1>
+      <p class="text-xl sm:text-2xl lg:text-3xl font-medium text-blue-100 mb-8 animate-fade-in-up animation-delay-300 [text-shadow:_0_1px_3px_rgb(0_0_0_/_50%)]">
+        {content.subtitle}
+      </p>
+      <p class="text-lg sm:text-xl text-blue-200/90 mb-12 animate-fade-in-up animation-delay-500 [text-shadow:_0_1px_3px_rgb(0_0_0_/_50%)]">
+        {content.tagline}
+      </p>
+      <a
+        href={content.ctaLink}
+        class="inline-flex items-center justify-center bg-yellow-400 text-gray-900 font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-full text-lg hover:bg-yellow-500 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in-up animation-delay-700 group"
+      >
+       <Rocket class="w-5 h-5 mr-2 -ml-1 group-hover:animate-rocket-launch transition-transform duration-300" stroke-width="2.5" />
+        {content.ctaText}
+      </a>
+    </div>
+  </div>
+</section>

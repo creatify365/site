@@ -1,5 +1,74 @@
-<html>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
+---
+// Import components
+import HeroSection from '../components/HeroSection.astro';
+import ChallengeSection from '../components/ChallengeSection.astro';
+import SolutionSection from '../components/SolutionSection.astro'; // Note: Adjusted path based on common structure
+import CtaSection from '../components/CtaSection.astro'
+import Layout from '../layouts/Layout.astro';
+
+const pageMeta = {
+    title: "Creatify365 | Digital Growth Partner in Uganda",
+    description: "Boost your Ugandan business with Creatify365. We build stunning websites, improve Google visibility, and provide digital solutions to attract more local customers."
+}
+
+
+
+
+---
+
+<Layout title={pageMeta.title} description={pageMeta.description}>
+	<main>
+		<!-- Hero Section -->
+		<HeroSection />
+
+		<!-- Challenge Section -->
+		<ChallengeSection />
+
+		<!-- Solution Section -->
+		<SolutionSection />
+
+    <!-- Cta Section -->
+    <CtaSection />
+
+		<!-- Footer -->
+	</main>
+
+</Layout>
+
+<style>
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-500 { animation-delay: 0.5s; }
+  .animation-delay-700 { animation-delay: 0.7s; }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 0.6s ease-out forwards;
+    opacity: 0; /* Start hidden */
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+    opacity: 0; /* Start hidden */
+  }
+</style>

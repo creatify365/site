@@ -1,0 +1,73 @@
+---
+
+const content = {
+  headline: "Your Solution: Creatify365 Makes Digital Success Simple",
+  introParagraph: "At Creatify365, we understand the unique challenges faced by small businesses, NGOs, schools, and clinics across Uganda. We know you're busy. We know technology can be confusing. And we know every shilling counts. That's why we've built a complete digital solution designed specifically for you. We bridge the gap between your passion and your online success, without the complexity or the jargon.",
+  imagineHeadline: "Imagine This:",
+  features: [
+    {
+      imageSrc: "/site/images/bakery.png", // Example path, replace with your actual image
+      imageAlt: "Mockup of a professional website on a laptop and phone",
+      title: "A stunning, professional website",
+      description: "that perfectly reflects your brand, is easy for customers to navigate on any device, and truly makes a great first impression. <strong>No more outdated designs, just a powerful online storefront that converts visitors into customers.</strong>"
+    },
+    {
+      imageSrc: "/site/images/search.png", // Example path
+      imageAlt: "Illustration of a business appearing high in Google search results",
+      title: "Your business showing up prominently on Google",
+      description: "when potential customers in Kampala search for what you offer. Think \"bakery near me\" or \"best dental clinic in Ntinda.\" <strong>More visibility means more customers walking through your door.</strong>"
+    },
+    {
+      imageSrc: "/site/images/branding.png", // Example path
+      imageAlt: "Collage of cohesive branding elements like logo and business card",
+      title: "A brand identity that stands out",
+      description: "and instills immediate trust and recognition. From a memorable logo to consistent messaging, we ensure your business looks as professional as the service you provide. <strong>Build credibility and loyalty effortlessly.</strong>"
+    },
+    {
+      imageSrc: "/site/images/custom-app.png", // Example path
+      imageAlt: "Tablet screen showing a custom business application interface",
+      title: "Streamlined operations with custom apps",
+      description: "(if needed) – whether it's an online booking system, a simple inventory tracker, or a customer loyalty program, we can build efficient digital tools tailored to <em>your</em> unique workflow. <strong>Save time and reduce daily hassles.</strong>"
+    }
+  ]
+};
+
+
+---
+
+<section id="solution" class="py-16 md:py-24 bg-slate-100">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+        {content.headline}
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        {content.introParagraph}
+      </p>
+    </div>
+
+    <div class="text-center mb-10 md:mb-12">
+        <h3 class="text-2xl sm:text-3xl font-semibold text-indigo-700">
+            {content.imagineHeadline}
+        </h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+      {content.features.map(feature => {
+        return (
+          <div class="bg-slate-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center sm:flex-row sm:text-left sm:items-start">
+            {feature.imageSrc && (
+              <div class="flex-shrink-0 w-full mb-4 sm:w-auto sm:mb-0 sm:mr-6">
+                <img src={feature.imageSrc} alt={feature.imageAlt} class="w-full h-52 rounded-lg object-cover shadow-md sm:w-44 sm:h-44 md:w-56 md:h-56" loading="lazy" />
+              </div>
+            )}
+            <div>
+              <h4 class="text-xl font-semibold text-gray-800 mb-2 sm:mb-3">{feature.title}</h4>
+              <p class="text-gray-600 leading-relaxed" set:html={feature.description} />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
