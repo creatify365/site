@@ -1,0 +1,57 @@
+---
+// src/components/TopNav.astro
+
+export interface NavLink {
+  text: string;
+  href: string;
+}
+
+export interface Props {
+  logoSrc?: string;
+  logoText?: string;
+  logoHref?: string;
+  navLinks?: NavLink[];
+}
+
+const {
+  logoText = "Creatify365", // Fallback text if no logoSrc
+  logoHref = "/",
+  navLinks = [
+    { text: "Home", href: "/" },
+    { text: "Services", href: "/services" },
+    { text: "About", href: "/about" },
+    { text: "Contact", href: "#contact" },
+  ],
+} = Astro.props;
+
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md text-gray-800">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16"> 
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href={logoHref} class="flex items-center space-x-2 text-xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors">
+          
+            <span>{logoText}</span>
+         
+        </a>
+      </div>
+
+      <!-- Desktop Navigation & Profile -->
+      <div class="flex items-center ml-6"> 
+        <nav class="flex items-baseline space-x-4 lg:space-x-6"> 
+          {navLinks.map(link => (
+            <a
+              href={link.href}
+              class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+            >
+              {link.text}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </div>
+  </div>
+</nav>
+
