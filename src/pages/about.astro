@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Creatify365: Your Dedicated Digital Partner in Uganda";
+const pageDescription = "Learn about Creatify365, our mission to demystify digital marketing and make powerful online tools accessible and affordable for every local venture in Uganda. Discover our story, vision, values, and commitment to your business's growth.";
+const companyName = "Creatify365"; // Consistent with Footer.astro
+
+// Placeholders - Update these with your actual information
+const phoneNumber = "+256 7XX-XXX-XXX"; // Example: +256 700-123-456
+const emailAddress = "info@creatify365.com"; // Or .ug if preferred
+const servicesPageLink = "/services"; // Adjust if your services page has a different path
+const consultationLink = "/contact"; // Adjust if your contact/consultation page has a different path
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto max-w-4xl">
+      <header class="mb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+          About {companyName}: Your Dedicated Digital Partner in Uganda
+        </h1>
+      </header>
+
+      <article class="prose prose-lg lg:prose-xl dark:prose-invert max-w-none mx-auto">
+        <section class="mb-10">
+          <h2>Our Story: Born from a Need, Built for Your Growth</h2>
+          <p>At {companyName}, we saw a common struggle faced by countless small businesses, non-profits, schools, and clinics across Uganda. You're passionate about what you do, you work tirelessly for your customers and communities, but the digital world often feels like a confusing, expensive, and time-consuming obstacle.</p>
+          <p>We started {companyName} with a clear mission: <strong>to demystify digital marketing and make powerful online tools accessible and affordable for every local venture in Uganda.</strong> We believe that every business, regardless of size, deserves a professional online presence that truly reflects its value and attracts the customers it needs to thrive.</p>
+          <p>We understand that you don't want to become a tech expert – you want to focus on <em>your</em> expertise. That's where we come in.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2>Our Vision: Empowering Uganda's Local Economy, One Digital Success Story at a Time</h2>
+          <p>Our vision extends beyond just building websites. We envision a thriving landscape of local businesses, NGOs, schools, and clinics in Uganda, each empowered by a strong, effective digital footprint. We strive to be the trusted partner that helps you navigate the complexities of the online world, ensuring your efforts translate into tangible growth, increased visibility, and a lasting impact in your community.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2>Our Values: Simple Principles, Powerful Results</h2>
+          <p>Our work at {companyName} is guided by core values that directly benefit you:</p>
+          <ul>
+            <li><strong>Simplicity:</strong> We cut through the jargon. We explain complex digital concepts in plain, understandable language.</li>
+            <li><strong>Partnership:</strong> We see ourselves as an extension of your team. Your success is our success, and we're committed to building long-term relationships.</li>
+            <li><strong>Transparency:</strong> No hidden fees, no smoke and mirrors. You'll always know what we're doing, why we're doing it, and what results to expect.</li>
+            <li><strong>Local Focus:</strong> We understand the unique dynamics, opportunities, and challenges of the Ugandan market. Our strategies are tailored to work here.</li>
+            <li><strong>Results-Driven:</strong> We're not just about pretty designs; we're about getting you more customers, more visibility, and more impact.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2>Our Expertise: Your Dedicated Team of Digital Craftsmen</h2>
+          <p>Behind {companyName} is a team of dedicated professionals with years of experience in web design, search engine optimization (SEO), custom app development, and branding. We combine technical prowess with a deep understanding of market dynamics, ensuring your digital presence is not only beautiful but also strategically effective.</p>
+          <p>We stay ahead of the curve so you don't have to. Our experts are continually learning the latest trends and technologies to ensure your business remains competitive and relevant in the fast-evolving digital landscape.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2>Our Commitment to You: Digital Peace of Mind</h2>
+          <p>We know your time is precious and your resources are valuable. Our commitment is to provide you with a <strong>hassle-free experience</strong> from start to finish. We handle the technical heavy lifting, allowing you to focus on running your business, serving your clients, and making a difference. With {companyName}, you're not just getting a service; you're gaining a reliable, proactive digital partner.</p>
+        </section>
+      </article>
+
+      <hr class="my-12 border-gray-300 dark:border-gray-600">
+
+      <section class="text-center mb-10">
+        <h2 class="text-3xl font-semibold text-gray-900 dark:text-white mb-6">
+          Ready to Make Your Digital Dreams a Reality?
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+          We'd love to learn about your unique business and how we can help you achieve your online goals.
+        </p>
+        <a href={consultationLink} class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg">
+          Let's Connect – Schedule a Free Consultation
+        </a>
+      </section>
+
+      <hr class="my-12 border-gray-300 dark:border-gray-600">
+
+      <section class="text-center text-gray-700 dark:text-gray-300">
+        <h3 class="text-xl font-semibold mb-4">You can also reach us directly:</h3>
+        <ul class="list-none space-y-2">
+          <li>
+            <strong>Call:</strong>
+            <a href={`tel:${phoneNumber.replace(/\s+/g, '')}`} class="text-blue-500 hover:text-blue-400 hover:underline">{phoneNumber}</a>
+          </li>
+          <li>
+            <strong>Email:</strong>
+            <a href={`mailto:${emailAddress}`} class="text-blue-500 hover:text-blue-400 hover:underline">{emailAddress}</a>
+          </li>
+          <li>
+            <strong>Visit Our Services Page:</strong>
+            <a href={servicesPageLink} class="text-blue-500 hover:text-blue-400 hover:underline">Learn More About Our Services</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</Layout>

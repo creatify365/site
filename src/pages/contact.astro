@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page metadata
+const pageTitle = "Get in Touch | Creatify365 - Let's Build Your Digital Future";
+const pageDescription = "Contact Creatify365 for expert digital services in Uganda. Reach out for a free consultation on website design, SEO, app development, and branding.";
+
+// Company & Contact Information
+const companyName = "Creatify365";
+const phoneNumber = "+256 7XX-XXX-XXX"; // Replace with actual number
+const emailAddress = "info@creatify365.com"; // Replace with actual email
+// const officeAddress = "Plot 123, Lumumba Avenue, Kampala, Uganda"; // No longer used
+
+const whatsappNumber = "2567XXXXXXXXX"; // Replace with your WhatsApp number (e.g., 256700123456)
+const whatsappMessage = "Hello Creatify365! I'd like to schedule a free digital strategy session.";
+const consultationButtonLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto max-w-4xl">
+
+      <header class="mb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          Get in Touch with {companyName}: Let's Build Your Digital Future
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
+          <strong>Ready to attract more customers, streamline your operations, or simply get noticed online? We're here to help!</strong>
+        </p>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          At {companyName}, we believe in open communication and making things simple. Whether you have a quick question, need a detailed quote, or are ready to kickstart your next big project, reaching out to us is easy.
+        </p>
+      </header>
+
+      <hr class="my-10 border-gray-300 dark:border-gray-700">
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
+          How Can We Help You Today?
+        </h2>
+
+        <div class="space-y-10">
+
+          <article class="p-6 md:p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+              1. Schedule a Free Consultation
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">
+              This is the best way to get started! Let's have a chat about your unique business needs and how {companyName} can help you thrive in the digital landscape. No pressure, just a friendly conversation to understand your goals.
+            </p>
+            <a href={consultationButtonLink} target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-md transition duration-300 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+              Chat on WhatsApp for a FREE Session
+            </a>
+          </article>
+
+          <article class="p-6 md:p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+              2. Call or Email Us
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              Prefer to speak directly or send a detailed message? Our team is ready to assist you.
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+              <li>
+                <strong>Call Us:</strong>
+                <a href={`tel:${phoneNumber.replace(/\s+/g, '')}`} class="text-blue-500 hover:text-blue-400 hover:underline ml-1">{phoneNumber}</a>
+                <br />
+                <em class="text-sm">(Our phone lines are open Monday - Friday, 9:00 AM - 5:00 PM EAT)</em>
+              </li>
+              <li>
+                <strong>Email Us:</strong>
+                <a href={`mailto:${emailAddress}`} class="text-blue-500 hover:text-blue-400 hover:underline ml-1">{emailAddress}</a>
+                <br />
+                <em class="text-sm">(We aim to respond to all email inquiries within 24 business hours.)</em>
+              </li>
+            </ul>
+          </article>
+
+          <article id="contact-form" class="p-6 md:p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+              3. Send Us a Message
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">
+              Have a specific question or a brief inquiry? Fill out the form below, and we'll get back to you promptly.
+            </p>
+            <form action="#" method="POST" class="space-y-6"> {/* Replace # with your form handling endpoint */}
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Name</label>
+                <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-900 dark:text-gray-100" placeholder="e.g., Jane Doe">
+              </div>
+
+              <div>
+                <label for="business_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Business Name (Optional)</label>
+                <input type="text" name="business_name" id="business_name" class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-900 dark:text-gray-100" placeholder="e.g., My Awesome Company">
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Email Address</label>
+                <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-900 dark:text-gray-100" placeholder="you@example.com">
+              </div>
+
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Phone Number (Optional)</label>
+                <input type="tel" name="phone" id="phone" class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-900 dark:text-gray-100" placeholder="e.g., +256 7XX XXX XXX">
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">How Can We Help You?</label>
+                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-900 dark:text-gray-100" placeholder="Tell us about your project or question..."></textarea>
+              </div>
+
+              <div>
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 ease-in-out">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </article>
+
+        </div>
+      </section>
+
+      <hr class="my-10 border-gray-300 dark:border-gray-700">
+
+      <section class="text-center py-8">
+        <h2 class="text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+          We Look Forward to Hearing From You!
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          At {companyName}, your digital success is our priority. Let's connect and start building a stronger, more visible future for your business, NGO, school, or clinic in Uganda.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Scoped styles for emphasis if needed, though Tailwind's `italic` class is often sufficient */
+  em {
+    font-style: italic;
+  }
+  /* Ensure strong tags are bold if not already handled by browser defaults or global styles */
+  strong {
+    font-weight: bold;
+  }
+</style>
